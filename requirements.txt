@@ -1,0 +1,4 @@
+androguard==3.3.5
+Flask==2.3.2
+loguru==0.7.3
+gensim==4.3.3
