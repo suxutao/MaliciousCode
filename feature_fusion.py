@@ -1,9 +1,8 @@
 from androguard.misc import AnalyzeDex
 from loguru import logger
 
-from code_parse.feature import AstFeatureClass
+from code_parse import AstFeature
 
-AstFeature=AstFeatureClass()
 
 def fusion(api_feature, ast_feature):
     """两部分特征融合"""
@@ -25,7 +24,7 @@ def dex2feature(dex_path):
     # 输出调用图
     for method in call_graph.nodes():
         api_feature = []
-        AstFeature.method=method
+        AstFeature.method = method
         ast_feature = AstFeature.extract_feature()
         feature = fusion(api_feature, ast_feature)
         results.update({method: feature})
@@ -39,7 +38,7 @@ def main():
     result = dex2feature(dex_path)
     logger.info('end')
     for k, v in result.items():
-        logger.success(f'{k}:{v[0]}')
+        logger.success(f'{k}:{v}')
         break
 
 

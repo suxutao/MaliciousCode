@@ -12,7 +12,6 @@ class AstFeatureClass:
         self.method = method
         self.model = Doc2Vec.load("models/ast2vec_model.model")
 
-
     def extract_feature(self):
         """
         提取特征
@@ -27,3 +26,6 @@ class AstFeatureClass:
     def print(self):
         """输出方法"""
         logger.debug(self.method)
+
+
+AstFeature = AstFeatureClass()

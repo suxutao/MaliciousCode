@@ -1,3 +1,3 @@
-from .feature import AstFeatureClass
+from .feature import AstFeature
 
-__all__ = ['feature']
+__all__ = ['AstFeature']
